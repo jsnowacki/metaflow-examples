@@ -17,6 +17,7 @@ tasks:
     before: |
       bash $GITPOD_REPO_ROOT/configure_aws_with_gitpod.sh
       pyenv install -f mambaforge
+      pyenv local mambaforge
       mamba create -yn metaflow python=3.8 pip -c conda-forge
       mamba init
       cat <<- METAFLOWRCFILE > /home/gitpod/.bashrc.d/metaflow
