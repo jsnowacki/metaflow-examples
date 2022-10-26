@@ -14,7 +14,9 @@
 
 tasks:
   - name: Initialize & Configure AWS
-    command: bash $GITPOD_REPO_ROOT/configure_aws_with_gitpod.sh
+    init: bash $GITPOD_REPO_ROOT/configure_aws_with_gitpod.sh
+  - name: Install Python dependencies
+    init: pip3 install -r requirements.txt
 
 # The 'github' section defines configuration of continuous prebuilds
 # for GitHub repositories when the GitHub application
