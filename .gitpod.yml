@@ -20,10 +20,11 @@ tasks:
       pyenv local mambaforge
       mamba create -yn metaflow python=3.8 pip -c conda-forge
       mamba init
-      cat <<- METAFLOWRCFILE > /home/gitpod/.bashrc.d/metaflow
+      cat <<- METAFLOW >> /home/gitpod/.bashrc
+      # Metaflow
       export METAFLOW_CONDA_DEPENDENCY_RESOLVER=mamba
       mamba activate metaflow
-      METAFLOWRCFILE
+      METAFLOW
     init: pip install -r requirements.txt
     command: python --version
 
