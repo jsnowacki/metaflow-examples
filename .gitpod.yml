@@ -13,10 +13,10 @@
 # have full control.
 
 tasks:
-  - name: Initialize & Configure AWS
-    init: bash $GITPOD_REPO_ROOT/configure_aws_with_gitpod.sh
-  - name: Install Python dependencies
+  - name: Initialize & Configure AWS + Python
+    before: bash $GITPOD_REPO_ROOT/configure_aws_with_gitpod.sh
     init: pip3 install -r requirements.txt
+    command: python --version
 
 # The 'github' section defines configuration of continuous prebuilds
 # for GitHub repositories when the GitHub application
@@ -41,3 +41,7 @@ github:
     addComment: false
     # add a "Review in Gitpod" button to the pull request's description
     addBadge: true
+
+vscode:
+  extensions:
+    - ms-python.python
