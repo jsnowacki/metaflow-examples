@@ -14,8 +14,16 @@
 
 tasks:
   - name: Initialize & Configure AWS + Python
-    before: bash $GITPOD_REPO_ROOT/configure_aws_with_gitpod.sh
-    init: pip3 install -r requirements.txt
+    before: |
+      bash $GITPOD_REPO_ROOT/configure_aws_with_gitpod.sh
+      pyenv install -f mambaforge
+      mamba create -yn metaflow python=3.8 pip -c conda-forge
+      mamba init
+      cat <<- METAFLOWRCFILE > /home/gitpod/.bashrc.d/metaflow
+      export METAFLOW_CONDA_DEPENDENCY_RESOLVER=mamba
+      mamba activate metaflow
+      METAFLOWRCFILE
+    init: pip install -r requirements.txt
     command: python --version
 
 # The 'github' section defines configuration of continuous prebuilds
