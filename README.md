@@ -6,7 +6,7 @@ This repository contains an example of how to integrate AWS Single Sign-On (SSO)
 
 [Configure Secrets](#configure-secrets) & Hit Below button:
 
-<a href="https://gitpod.io/#https://github.com/gitpod-io/demo-gitpod-with-aws"><img src="https://gitpod.io/button/open-in-gitpod.svg"/></a>
+<a href="https://gitpod.io/#https://github.com/jsnowacki/metaflow-examples"><img src="https://gitpod.io/button/open-in-gitpod.svg"/></a>
 
 
 ## Secret Management
