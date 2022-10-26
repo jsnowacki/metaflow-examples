@@ -25,7 +25,9 @@ tasks:
       export METAFLOW_CONDA_DEPENDENCY_RESOLVER=mamba
       mamba activate metaflow
       METAFLOW
-    init: pip install -r requirements.txt
+    init: |
+      source /home/gitpod/.bashrc
+      pip install -r requirements.txt
     command: python --version
 
 # The 'github' section defines configuration of continuous prebuilds
